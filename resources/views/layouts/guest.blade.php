@@ -123,6 +123,5 @@
     <script type="text/javascript" src="/frontend/js/custom/custom.js"></script>
 </body>
 
-<!-- Mirrored from www.evethemes.com/demo/lp/black-white/preview/black/default.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Apr 2025 15:40:12 GMT -->
 
 </html>
