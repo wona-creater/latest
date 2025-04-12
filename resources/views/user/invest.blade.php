@@ -44,46 +44,64 @@
                             <input type="hidden" name="plan_id" value="{{ $investmentplan->id }}">
                             <div class="mt-3 space-y-4 text-left">
                                 <div class="flex items-start space-x-3">
-                                    <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    <div
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
-                                    <span class="font-medium">Min_Amount <b>${{ $investmentplan->min_amount }}</b></span>
+                                    <span class="font-medium">Min_Amount
+                                        <b>${{ $investmentplan->min_amount }}</b></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    <div
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
-                                    <span class="font-medium">Max_Amount <b>${{ $investmentplan->max_amount }}</b></span>
+                                    <span class="font-medium">Max_Amount
+                                        <b>${{ $investmentplan->max_amount }}</b></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    <div
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
-                                    <span class="font-medium">Duration <b>{{ $investmentplan->duration }} days</b></span>
+                                    <span class="font-medium">Duration <b>{{ $investmentplan->duration }}
+                                            days</b></span>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    <div
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
                                     <span class="font-medium">
                                         <input
                                             class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
-                                            placeholder="amount" type="number" name="amount"
-                                            x-model="amount" @input="calculateValues" />
+                                            placeholder="amount" type="number" name="amount" x-model="amount"
+                                            @input="calculateValues" />
                                     </span>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    <div
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary dark:bg-accent/10 dark:text-accent-light">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
                                     <span class="font-medium">
@@ -96,9 +114,12 @@
                                     </span>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-warning/10 text-warning">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    <div
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-warning/10 text-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
                                     <span class="font-medium">
@@ -111,9 +132,12 @@
                                     </span>
                                 </div>
                                 <div class="flex items-start space-x-3">
-                                    <div class="flex size-6 shrink-0 items-center justify-center rounded-full bg-warning/10 text-warning">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                                    <div
+                                        class="flex size-6 shrink-0 items-center justify-center rounded-full bg-warning/10 text-warning">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
                                     </div>
                                     <span class="font-medium">
@@ -139,11 +163,48 @@
         </div>
 
         <!-- Optionally display user's current investments -->
-      
+
     </main>
 
     @push('scripts')
         <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    @endpush
+
+    @push('scripts')
+        @if (session('success'))
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    Swal.fire({
+                        icon: 'success',
+                        text: "{{ addslashes(session('success')) }}",
+                        timer: 3000,
+                        showConfirmButton: false,
+                        background: '#f0fdf4',
+                        iconColor: '#10B981',
+                        customClass: {
+                            popup: 'rounded-xl'
+                        }
+                    });
+                });
+            </script>
+        @endif
+        @if (session('error'))
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    Swal.fire({
+                        icon: 'error',
+                        text: "{{ addslashes(session('error')) }}",
+                        timer: 3000,
+                        showConfirmButton: false,
+                        background: '#fef2f2',
+                        iconColor: '#EF4444',
+                        customClass: {
+                            popup: 'rounded-xl'
+                        }
+                    });
+                });
+            </script>
+        @endif
     @endpush
 
 

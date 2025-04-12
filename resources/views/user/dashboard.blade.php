@@ -54,7 +54,7 @@
                         <div class="rounded-lg border border-slate-150 p-3 dark:border-navy-700">
                             <div class="flex justify-between space-x-1">
                                 <p class="text-xl font-semibold text-slate-700 dark:text-navy-100">
-                                    ${{ $user->balance }}
+                                    ${{ number_format($user->balance)  }}
                                 </p>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="size-8 text-warning" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">

@@ -41,7 +41,6 @@ class userController extends Controller
         // return view('user.dashboard');
         if ($user->role === 'user') {
             return view('user.dashboard', compact('user', 'deposits', 'withdrawals'));
-            
         } elseif ($user->role === 'admin') {
             $users = User::where('role', 'user')->get(); // Fetch users for admin
             return view('admin.board', compact('users'));
@@ -63,8 +62,6 @@ class userController extends Controller
 
     public function deposits(Request $request)
     {
-
-
         $request->validate([
             'amount' => 'required|numeric|min:0.01',
             'image' => 'nullable|image|max:2048',
@@ -119,10 +116,11 @@ class userController extends Controller
         return view('user.withdrawal');
     }
 
+    // app/Http/Controllers/YourController.php
     public function withdrawals(Request $request)
     {
-
         $user = Auth::user();
+        // Validate input
         $request->validate([
             'crypto_name' => 'required|string|max:255',
             'amount' => 'required|numeric|min:0.01',
@@ -130,19 +128,47 @@ class userController extends Controller
             'network' => 'required|string|max:255',
         ]);
 
-        // Generate a unique 5-character transaction ID
+        // Check if balance is greater than 0
+        if ($user->balance <= 0) {
+            \Log::info('Withdrawal failed: User balance is zero', ['user_id' => $user->id]);
+            return redirect()->route('user.withdraw')->with('error', 'Your balance is zero. Please deposit funds.');
+        }
+
+        // Check if amount is less than or equal to balance
+        if ($request->amount > $user->balance) {
+            \Log::info('Withdrawal failed: Insufficient balance', [
+                'user_id' => $user->id,
+                'balance' => $user->balance,
+                'requested_amount' => $request->amount
+            ]);
+            return redirect()->route('user.withdraw')->with('error', 'Insufficient balance for this withdrawal.');
+        }
+
+        // Generate unique transaction ID
         do {
             $transactionId = Str::upper(Str::random(5));
         } while (Withdrawal::where('transaction_id', $transactionId)->exists());
 
+        // Create withdrawal
         Withdrawal::create([
-            'user_id' => auth()->id(),
+            'user_id' => $user->id,
             'transaction_id' => $transactionId,
             'amount' => $request->amount,
             'crypto_name' => $request->crypto_name,
             'network' => $request->network,
-            'status' => 'pending', // Default value
+            'status' => 'pending',
             'crypto_address' => $request->crypto_address,
+        ]);
+
+        // Deduct amount from balance
+        $user->balance -= $request->amount;
+        $user->save();
+
+        \Log::info('Withdrawal processed', [
+            'user_id' => $user->id,
+            'transaction_id' => $transactionId,
+            'amount' => $request->amount,
+            'new_balance' => $user->balance
         ]);
 
         return redirect()->route('user.withdraw')->with('success', 'Withdrawal request submitted successfully!');
@@ -166,31 +192,64 @@ class userController extends Controller
     }
 
 
+    // app/Http/Controllers/YourController.php
     public function invests(Request $request)
     {
-        // Fetch the plan to get min_amount and max_amount
+        $user = Auth::user();
         $plan = InvestmentPlan::findOrFail($request->input('plan_id'));
 
         $request->validate([
-            'plan_id' => 'required|exists:investmentplans,id', // Match table name
+            'plan_id' => 'required|exists:investmentplans,id', // Correct table name
             'amount' => "required|numeric|min:{$plan->min_amount}|max:{$plan->max_amount}",
-            'expected_profit' => 'required|numeric',
             'start_date' => 'required|date',
             'end_date' => 'required|date|after:start_date',
         ]);
 
+        // Check balance
+        if ($user->balance <= 0) {
+            \Log::info('Investment failed: Zero balance', ['user_id' => $user->id]);
+            return redirect()->route('user.invest')->with('error', 'Your balance is zero. Please deposit funds.');
+        }
+
+        if ($request->amount > $user->balance) {
+            \Log::info('Investment failed: Insufficient balance', [
+                'user_id' => $user->id,
+                'balance' => $user->balance,
+                'requested_amount' => $request->amount
+            ]);
+            return redirect()->route('user.invest')->with('error', 'Insufficient balance for this investment.');
+        }
+
+        // Calculate expected profit
+        $expectedProfit = $request->amount * ($plan->profit_percentage / 100);
+
+        // Create investment
         Investment::create([
-            'user_id' => auth()->id(),
+            'user_id' => $user->id,
             'plan_id' => $request->plan_id,
             'amount' => $request->amount,
-            'expected_profit' => $request->expected_profit,
+            'expected_profit' => $expectedProfit,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
-            'status' => 'active', // Default value from schema
+            'status' => 'active',
+        ]);
+
+        // Deduct balance
+        $user->balance -= $request->amount;
+        $user->save();
+
+        \Log::info('Investment processed', [
+            'user_id' => $user->id,
+            'plan_id' => $request->plan_id,
+            'amount' => $request->amount,
+            'expected_profit' => $expectedProfit,
+            'new_balance' => $user->balance
         ]);
 
         return redirect()->route('user.invest')->with('success', 'Plan chosen successfully!');
     }
+
+
     public function investhistory(Request $request)
     {
         $currentUser = $request->user();

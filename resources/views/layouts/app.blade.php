@@ -10,8 +10,9 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
 
-    <title>Lineone - Cryptocurrency v2 Dashboard</title>
-    <link rel="icon" type="image/png" href="/backend/images/favicon.png" />
+    <title>The Real World University Platform</title>
+       <link rel="shortcut icon" href="/backend/images/app-logo.png" height="10" width="20" type="image/x-icon" />
+
 
     <!-- CSS Assets -->
     <link rel="stylesheet" href="/backend/css/app.css" />
@@ -33,6 +34,11 @@
             document.documentElement.classList.add("dark");
     </script>
     <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+
+
+
 </head>
 
 <body x-data class="is-header-blur" x-bind="$store.global.documentBody">
@@ -158,6 +164,5 @@
     </div>
 </body>
 
-<!-- Mirrored from lineone.piniastudio.com/dashboards-crypto-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 21 Mar 2024 15:37:37 GMT -->
 
 </html>
