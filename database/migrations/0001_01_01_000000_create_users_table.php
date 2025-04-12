@@ -16,6 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->enum('role', ['user', 'admin'])->default('user');
+            $table->decimal('balance', 10, 2)->default(0);
+            $table->text('home_address')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->enum('document_type', ['drivers_license', 'government_id', 'passport'])->nullable();
+            $table->string('document_image')->nullable();
+            $table->string('country')->nullable();
+            $table->string('image')->nullable();
+            $table->enum('kyc_status', ['pending', 'verified', 'rejected'])->default('pending');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
