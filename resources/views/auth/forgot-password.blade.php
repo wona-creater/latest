@@ -17,9 +17,9 @@
 
     <!-- Stylesheet
     ========================= -->
-    <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/style/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="/style/css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/fe/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/fe/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/fe/css/stylesheet.css">
     <!-- Colors Css -->
     <link id="color-switcher" type="text/css" rel="stylesheet" href="#">
 </head>
@@ -124,11 +124,11 @@
     <!-- Styles Switcher End -->
 
     <!-- Script -->
-    <script src="/style/js/jquery.min.js"></script>
-    <script src="/style/js/bootstrap.bundle.min.js"></script>
+    <script src="/fe/js/jquery.min.js"></script>
+    <script src="/fe/js/bootstrap.bundle.min.js"></script>
     <!-- Style Switcher -->
-    <script src="/style/js/switcher.min.js"></script>
-    <script src="/style/js/theme.js"></script>
+    <script src="/fe/js/switcher.min.js"></script>
+    <script src="/fe/js/theme.js"></script>
 
 </body>
 

@@ -19,9 +19,9 @@
 
      <!-- Stylesheet
 ========================= -->
-     <link rel="stylesheet" type="text/css" href="/style/css/bootstrap.min.css" />
-     <link rel="stylesheet" type="text/css" href="/style/css/all.min.css" />
-     <link rel="stylesheet" type="text/css" href="/style/css/stylesheet.css" />
+     <link rel="stylesheet" type="text/css" href="/fe/css/bootstrap.min.css" />
+     <link rel="stylesheet" type="text/css" href="/fe/css/all.min.css" />
+     <link rel="stylesheet" type="text/css" href="/fe/css/stylesheet.css" />
      <!-- Colors Css -->
      <link id="color-switcher" type="/style/text/css" rel="stylesheet" href="#" />
  </head>
@@ -37,7 +37,7 @@
                      <div class="hero-wrap d-flex align-items-center h-100">
                          <div class="hero-mask opacity-5 bg-dark"></div>
                          <div class="hero-bg hero-bg-scroll"
-                             style="background-image: url('/style/images/login-bg-6.jpg')"></div>
+                             style="background-image: url('/fe/images/login-bg-6.jpg')"></div>
                          <div class="hero-content mx-auto w-100 h-100">
                              <div class="container d-flex flex-column h-100">
                                  <div class="row g-0">
@@ -151,11 +151,11 @@
      <!-- Styles Switcher End -->
 
      <!-- Script -->
-     <script src="/style/js/jquery.min.js"></script>
-     <script src="/style/js/bootstrap.bundle.min.js"></script>
+     <script src="/fe/js/jquery.min.js"></script>
+     <script src="/fe/js/bootstrap.bundle.min.js"></script>
      <!-- Style Switcher -->
-     <script src="/style/js/switcher.min.js"></script>
-     <script src="/style/js/theme.js"></script>
+     <script src="/fe/js/switcher.min.js"></script>
+     <script src="/fe/js/theme.js"></script>
  </body>
 
  </html>
