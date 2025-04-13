@@ -9,7 +9,7 @@
             </h3>
         </div>
 
-        <input type="text" name="name">
+
         @error('name')
             <span class="error">{{ $message }}</span>
         @enderror
@@ -30,7 +30,7 @@
                             </div>
                             <div class="mt-5">
                                 <h4 class="text-xl font-semibold text-slate-700 dark:text-navy-100">
-                                    Plan 
+                                    Plan
                                 </h4>
                                 <p>{{ $signal->name }}</p>
                             </div>
@@ -85,4 +85,41 @@
             </div>
         </form>
     </main>
+
+    @push('scripts')
+        @if (session('success'))
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    Swal.fire({
+                        icon: 'success',
+                        text: "{{ addslashes(session('success')) }}",
+                        timer: 3000,
+                        showConfirmButton: false,
+                        background: '#f0fdf4',
+                        iconColor: '#10B981',
+                        customClass: {
+                            popup: 'rounded-xl'
+                        }
+                    });
+                });
+            </script>
+        @endif
+        @if (session('error'))
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    Swal.fire({
+                        icon: 'error',
+                        text: "{{ addslashes(session('error')) }}",
+                        timer: 3000,
+                        showConfirmButton: false,
+                        background: '#fef2f2',
+                        iconColor: '#EF4444',
+                        customClass: {
+                            popup: 'rounded-xl'
+                        }
+                    });
+                });
+            </script>
+        @endif
+    @endpush
 </x-app-layout>

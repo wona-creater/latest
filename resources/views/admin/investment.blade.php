@@ -273,11 +273,18 @@
                                 </span>
                             </div>
                         </div>
-                        <form action="{{ route('user.invests') }}" method="POST">
-                            <div class="mt-8">
-                                <button
-                                    class="btn w-full h-10 bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
-                                    delete plan
+                      
+
+
+                        <form action="{{ route('admin.investments.delete', $investmentplan->id) }}" method="POST"
+                            class="w-full mt-5"
+                            onsubmit="return confirm('Are you sure you want to delete this Investment Plan?');">
+                            @csrf
+                            @method('DELETE')
+                            <div class="flex justify-center">
+                                <button type="submit"
+                                    class="btn mt-5 space-x-2 rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
+                                    <span>Delete Investment</span>
                                 </button>
                             </div>
                         </form>

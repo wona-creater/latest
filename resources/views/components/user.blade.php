@@ -217,7 +217,7 @@
 
                 <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
                 <ul class="flex flex-1 flex-col px-4 font-inter">
-                  
+
                     <li x-data="accordionItem('menu-item-1')">
                         <a :class="expanded ? 'text-slate-800 font-semibold dark:text-navy-50' :
                             'text-slate-600 dark:text-navy-200  hover:text-slate-800  dark:hover:text-navy-50'"
@@ -468,14 +468,7 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a x-data="navLink" href="dashboards-employees.html"
-                            :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
-                                'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
-                            class="flex py-2 text-xs+ tracking-wide outline-none transition-colors duration-300 ease-in-out">
-                            Log Out
-                        </a>
-                    </li>
+                  
 
                 </ul>
                 <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>

@@ -149,7 +149,13 @@
                                             {{ $cryptoaddress->address }}
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            <button>Delete</button>
+                                            <form action="{{ route('cryptoaddress.destroy', $cryptoaddress->id) }}"
+                                                method="POST"
+                                                onsubmit="return confirm('Are you sure you want to delete this address?');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

@@ -5,7 +5,7 @@
    Template URL: http://demo.harnishdesign.net/html/oxyy
    Author URL: https://themeforest.net/user/harnishdesign
    File Description : Main css file of the template
-	
+
 =================================================
   Table of Contents
 =================================================
@@ -28,6 +28,13 @@
 		6.6 Other Bootstrap Specific
 
 =======================================================*/
+.video-wrapper {
+    margin-top: 20px; /* Adjust spacing as needed */
+    max-width: 800px; /* Optional: limit video width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 :root,
 [data-bs-theme="light"] {
   --bs-themecolor: #0d6efd;
@@ -61,7 +68,7 @@
 }
 
 /* =================================== */
-/*  1. Basic Style 
+/*  1. Basic Style
 /* =================================== */
 body, html {
   height: 100%;

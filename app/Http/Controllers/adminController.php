@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 
+
 class adminController extends Controller
 {
     //
@@ -39,6 +40,31 @@ class adminController extends Controller
     {
         $courses = Course::with('user')->latest()->get();
         return view('admin.course', compact('courses'));
+    }
+
+    public function admincourse(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'instructor' => 'required|string|max:255',
+            'rating' => 'required|numeric|min:0|max:5',
+            'student_count' => 'required|integer|min:0',
+            'price' => 'required|numeric|min:0',
+            'duration' => 'required|integer|min:1',
+            'category' => 'required|string|max:255',
+        ]);
+
+        Course::create([
+            'title' => $request->input('title'),
+            'instructor' => $request->input('instructor'),
+            'rating' => $request->input('rating'),
+            'student_count' => $request->input('student_count'),
+            'price' => $request->input('price'),
+            'duration' => $request->input('duration'),
+            'category' => $request->input('category'),
+        ]);
+
+        return redirect()->back()->with('success', 'Course saved!');
     }
 
 
@@ -73,50 +99,86 @@ class adminController extends Controller
     public function storeInvestmentPlan(Request $request)
     {
 
-        try {
-            // Validate the input
-            $request->validate([
-                'name' => 'required|string|max:255',
-                'min_amount' => 'required|numeric|min:0',
-                'max_amount' => 'required|numeric|min:0|gte:min_amount',
-                'profit_percentage' => 'required|numeric|min:0|max:100',
-                'duration' => 'required|integer|min:1',
-            ]);
 
-            // Create a new InvestmentPlan record
-            InvestmentPlan::create([
-                'name' => $request->input('name'),
-                'min_amount' => $request->input('min_amount'),
-                'max_amount' => $request->input('max_amount'),
-                'profit_percentage' => $request->input('profit_percentage'),
-                'duration' => $request->input('duration'),
-            ]);
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'min_amount' => 'required|numeric|min:0',
+            'max_amount' => 'required|numeric|min:0|gte:min_amount',
+            'profit_percentage' => 'required|numeric|min:0|max:100',
+            'duration' => 'required|integer|min:1',
+        ]);
 
-            return redirect()->route('admin.investment')
-                ->with('success', 'Investment plan saved successfully');
-        } catch (\Exception $e) {
-            Log::error('Error saving investment plan: ' . $e->getMessage());
-            return back()->with('error', 'Failed to save investment plan: ' . $e->getMessage());
-        }
+        // Create a new InvestmentPlan record
+        InvestmentPlan::create([
+            'name' => $request->input('name'),
+            'min_amount' => $request->input('min_amount'),
+            'max_amount' => $request->input('max_amount'),
+            'profit_percentage' => $request->input('profit_percentage'),
+            'duration' => $request->input('duration'),
+        ]);
+
+        return redirect()->route('admin.investment')
+            ->with('success', 'Investment plan saved successfully');
     }
 
     public function loan()
     {
-        $loans = Loan::with('user')->latest()->get();
+        $loans = Loan::with('user')->get();
         return view('admin.loan', compact('loans'));
     }
 
-    public function plan()
+    public function adminloan(Request $request)
     {
+        $request->validate([
+            'amount' => 'required|numeric|min:0',
+            'repayment_period' => 'required|integer|min:1',
+            'interest_rate' => 'required|numeric|min:0|max:100',
+            'monthly_repayment' => 'required|numeric|min:0',
+            'loan_type' => 'required|string|max:255',
+        ]);
+        Loan::create([
+            'amount' => $request->input('amount'),
+            'repayment_period' => $request->input('repayment_period'),
+            'interest_rate' => $request->input('interest_rate'),
+            'monthly_repayment' => $request->input('monthly_repayment'),
+            'loan_type' => $request->input('loan_type'),
+        ]);
 
-        return view('admin.plan');
+
+        return redirect()->back()->with('success', 'Loan saved!');
     }
+
+
 
     public function signal()
     {
-        $signals = Signal::with('user')->latest()->get();
+
+        $signals = Signal::with('user')->get();
         return view('admin.signal', compact('signals'));
     }
+
+    public function adminsignal(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'monthly_price' => 'required|numeric|min:0',
+            'signal_count' => 'required|integer',
+            'timeframes' => 'required|string|max:255',
+            'alert_types' => 'required|string|max:255',
+        ]);
+
+        Signal::create([
+            'name' => $request->input('name'),
+            'monthly_price' => $request->input('monthly_price'),
+            'signal_count' => $request->input('signal_count'),
+            'timeframes' => $request->input('timeframes'),
+            'alert_types' => $request->input('alert_types'),
+        ]);
+
+        return redirect()->back()->with('success', 'Signal saved!');
+    }
+
+
 
     public function dashboard()
     {
@@ -227,5 +289,45 @@ class adminController extends Controller
             Log::error('Error saving crypto address: ' . $e->getMessage());
             return back()->with('error', 'Failed to save crypto address: ' . $e->getMessage());
         }
+    }
+
+
+    public function deleteSignal($id)
+    {
+        $signal = Signal::findOrfail($id);
+        $signal->delete();
+
+        return redirect()->back()->with('success', 'Signal deleted!');
+    }
+
+    public function deleteLoan($id)
+    {
+        $loan = Loan::findOrfail($id);
+        $loan->delete();
+        return redirect()->back()->with('success', 'Loan deleted!');
+    }
+
+    public function deleteCourse($id)
+    {
+        $course = Course::findOrfail($id);
+        $course->delete();
+
+        return redirect()->back()->with('success', 'Course deleted!');
+    }
+
+    public function deleteInvestment($id)
+    {
+        $investmentplan = InvestmentPlan::findOrFail($id);
+        $investmentplan->delete();
+        return redirect()->back()->with('success', 'Investment plan deleted!');
+    }
+
+
+    public function destroyaddress($id)
+    {
+        $cryptoAddress = CryptoAddress::findOrFail($id);
+        $cryptoAddress->delete();
+
+        return redirect()->back()->with('success', 'Crypto address deleted successfully.');
     }
 }

@@ -263,6 +263,7 @@ class userController extends Controller
         $courses = Course::all();
         return view('user.course', compact('courses'));
     }
+
     public function coursestore(Request $request)
     {
         $request->validate([
@@ -272,7 +273,22 @@ class userController extends Controller
         $course = Course::findOrFail($request->course_id);
         $user = auth()->user();
 
-        // Store purchase details in course_histories
+        // Check balance
+        if ($user->balance <= 0) {
+            \Log::info('Course purchase failed: Zero balance', ['user_id' => $user->id]);
+            return redirect()->route('course')->with('error', 'Your balance is zero. Please deposit funds.');
+        }
+
+        if ($course->price > $user->balance) {
+            \Log::info('Course purchase failed: Insufficient balance', [
+                'user_id' => $user->id,
+                'balance' => $user->balance,
+                'course_price' => $course->price
+            ]);
+            return redirect()->route('course')->with('error', 'Insufficient balance for this course purchase.');
+        }
+
+        // Store purchase details
         CourseHistory::create([
             'course_id' => $course->id,
             'user_id' => $user->id,
@@ -283,7 +299,18 @@ class userController extends Controller
             'price' => $course->price,
             'duration' => $course->duration,
             'category' => $course->category,
-            'status' => 'pending', // Default status
+            'status' => 'pending',
+        ]);
+
+        // Deduct balance
+        $user->balance -= $course->price;
+        $user->save();
+
+        \Log::info('Course purchase processed', [
+            'user_id' => $user->id,
+            'course_id' => $course->id,
+            'price' => $course->price,
+            'new_balance' => $user->balance
         ]);
 
         return redirect()->route('course')->with('success', 'Course purchase request submitted successfully!');
@@ -297,28 +324,51 @@ class userController extends Controller
 
     public function signalstore(Request $request)
     {
-
-        // Validate that a signal_id was provided
         $validated = $request->validate([
-            'signal_id' => 'required|exists:signals,id', // Ensure the signal exists in the database
+            'signal_id' => 'required|exists:signals,id',
         ]);
 
-        // Find the selected signal
         $signal = Signal::findOrFail($validated['signal_id']);
+        $user = auth()->user();
 
-        // Store the signal plan details in the signal_histories table
+        // Check balance
+        if ($user->balance <= 0) {
+            \Log::info('Signal purchase failed: Zero balance', ['user_id' => $user->id]);
+            return redirect()->route('signal')->with('error', 'Your balance is zero. Please deposit funds.');
+        }
+
+        if ($signal->monthly_price > $user->balance) {
+            \Log::info('Signal purchase failed: Insufficient balance', [
+                'user_id' => $user->id,
+                'balance' => $user->balance,
+                'monthly_price' => $signal->monthly_price
+            ]);
+            return redirect()->route('signal')->with('error', 'Insufficient balance for this signal plan.');
+        }
+
+        // Store signal plan details
         SignalHistory::create([
-            'user_id' => Auth::id(), // Authenticated user's ID
-            'signal_id' => $signal->id, // Selected signal's ID
+            'user_id' => $user->id,
+            'signal_id' => $signal->id,
             'name' => $signal->name,
             'monthly_price' => $signal->monthly_price,
             'signal_count' => $signal->signal_count,
             'timeframes' => $signal->timeframes,
             'alert_types' => $signal->alert_types,
-            'status' => 'pending', // Default status
+            'status' => 'pending',
         ]);
 
-        // Redirect back with a success message
+        // Deduct balance
+        $user->balance -= $signal->monthly_price;
+        $user->save();
+
+        \Log::info('Signal purchase processed', [
+            'user_id' => $user->id,
+            'signal_id' => $signal->id,
+            'monthly_price' => $signal->monthly_price,
+            'new_balance' => $user->balance
+        ]);
+
         return redirect()->route('signal')->with('success', 'Plan selected successfully!');
     }
 
@@ -334,6 +384,7 @@ class userController extends Controller
         return view('user.loan', compact('loans'));
     }
 
+
     public function loanstore(Request $request)
     {
         $request->validate([
@@ -343,7 +394,22 @@ class userController extends Controller
         $loan = Loan::findOrFail($request->loan_id);
         $user = auth()->user();
 
-        // Store loan details in loans_histories
+        // Check balance
+        if ($user->balance <= 0) {
+            \Log::info('Loan failed: Zero balance', ['user_id' => $user->id]);
+            return redirect()->route('loan')->with('error', 'Your balance is zero. Please deposit funds.');
+        }
+
+        if ($loan->amount > $user->balance) {
+            \Log::info('Loan failed: Insufficient balance', [
+                'user_id' => $user->id,
+                'balance' => $user->balance,
+                'loan_amount' => $loan->amount
+            ]);
+            return redirect()->route('loan')->with('error', 'Insufficient balance for this loan.');
+        }
+
+        // Store loan details
         LoanHistory::create([
             'loan_id' => $loan->id,
             'user_id' => $user->id,
@@ -351,8 +417,19 @@ class userController extends Controller
             'repayment_period' => $loan->repayment_period,
             'interest_rate' => $loan->interest_rate,
             'monthly_repayment' => $loan->monthly_repayment,
-            'status' => 'pending', // Default status
+            'status' => 'pending',
             'loan_type' => $loan->loan_type,
+        ]);
+
+        // Deduct balance
+        $user->balance -= $loan->amount;
+        $user->save();
+
+        \Log::info('Loan processed', [
+            'user_id' => $user->id,
+            'loan_id' => $loan->id,
+            'amount' => $loan->amount,
+            'new_balance' => $user->balance
         ]);
 
         return redirect()->route('loan')->with('success', 'Loan plan selected successfully!');

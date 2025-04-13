@@ -977,7 +977,7 @@
                             <ul class="content-ul contact-address contact-address-space">
                                 <li><img src="/frontend/images/32x32x5.png" alt="Email Icon" /></li>
                                 <li>
-                                    <p><a href="mailto:info@elitewealthacademy.com">info@elitewealthacademy.com</a></p>
+                                    <p><a href="mailto:info@therealworduniversityplatform.com">info@therealworduniversityplatform.com</a></p>
                                 </li>
                             </ul>
                             <ul class="content-ul contact-address contact-address-space">

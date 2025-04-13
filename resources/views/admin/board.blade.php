@@ -49,7 +49,7 @@
                                 </svg>
                                 <span>Profile</span>
                             </a>
-                            <form action="{{ route('admin.delete', $user) }}" method="POST"
+                            {{-- <form action="{{ route('admin.delete', $user) }}" method="POST"
                                 onsubmit="return confirm('Are you sure you want to delete this user?')">
                                 @csrf
                                 @method('DELETE')
@@ -62,7 +62,7 @@
                                     </svg>
                                     <span>Delete</span>
                                 </button>
-                            </form>
+                            </form> --}}
                         </div>
                     </div>
                 </div>

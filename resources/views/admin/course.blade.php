@@ -40,106 +40,112 @@
                                     </svg>
                                 </button>
                             </div>
-                            <form class="px-4 py-4 sm:px-5">
+                            <form class="px-4 py-4 sm:px-5" action="{{ route('admin.courses.store') }}" method="POST">
+                                @csrf
                                 <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                                    <!-- Plan Name -->
+                                    <!-- Title -->
                                     <div>
-                                        <label for="name"
+                                        <label for="title"
                                             class="block text-sm font-medium text-slate-700 dark:text-navy-100">
                                             Title
                                         </label>
-                                        <input type="text" name="title" id="name" required
+                                        <input type="text" name="title" id="title" required
                                             class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:ring focus:ring-primary/20 dark:border-navy-500 dark:bg-navy-700 dark:text-navy-50 dark:placeholder-navy-300 dark:focus:border-accent"
-                                            placeholder="Enter Title">
+                                            placeholder="Enter Title" value="{{ old('title') }}">
                                         @error('title')
                                             <span class="text-xs text-error">{{ $message }}</span>
                                         @enderror
                                     </div>
 
-                                    <!-- Amount -->
+                                    <!-- Instructor -->
                                     <div>
-                                        <label for="amount"
+                                        <label for="instructor"
                                             class="block text-sm font-medium text-slate-700 dark:text-navy-100">
                                             Instructor
                                         </label>
-                                        <input type="text" name="instructor" id="name" required
+                                        <input type="text" name="instructor" id="instructor" required
                                             class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:ring focus:ring-primary/20 dark:border-navy-500 dark:bg-navy-700 dark:text-navy-50 dark:placeholder-navy-300 dark:focus:border-accent"
-                                            placeholder=" Repayment Period">
+                                            placeholder="Enter Instructor" value="{{ old('instructor') }}">
                                         @error('instructor')
                                             <span class="text-xs text-error">{{ $message }}</span>
                                         @enderror
                                     </div>
 
-                                    <!-- User Selection -->
+                                    <!-- Rating -->
                                     <div>
-                                        <label for="user_id"
+                                        <label for="rating"
                                             class="block text-sm font-medium text-slate-700 dark:text-navy-100">
                                             Rating
                                         </label>
-                                        <input type="text" name="rating" id="name" required
+                                        <input type="number" step="0.1" name="rating" id="rating" required
                                             class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:ring focus:ring-primary/20 dark:border-navy-500 dark:bg-navy-700 dark:text-navy-50 dark:placeholder-navy-300 dark:focus:border-accent"
-                                            placeholder="Enter  Interest Rate">
+                                            placeholder="Enter Rating (0-5)" value="{{ old('rating') }}">
                                         @error('rating')
                                             <span class="text-xs text-error">{{ $message }}</span>
                                         @enderror
                                     </div>
 
+                                    <!-- Student Count -->
                                     <div>
-                                        <label for="user_id"
+                                        <label for="student_count"
                                             class="block text-sm font-medium text-slate-700 dark:text-navy-100">
                                             Student Count
                                         </label>
-                                        <input type="text" name="student_count" id="name" required
+                                        <input type="number" name="student_count" id="student_count" required
                                             class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:ring focus:ring-primary/20 dark:border-navy-500 dark:bg-navy-700 dark:text-navy-50 dark:placeholder-navy-300 dark:focus:border-accent"
-                                            placeholder="Enter  Student Count">
+                                            placeholder="Enter Student Count" value="{{ old('student_count') }}">
                                         @error('student_count')
                                             <span class="text-xs text-error">{{ $message }}</span>
                                         @enderror
                                     </div>
+
+                                    <!-- Price -->
                                     <div>
-                                        <label for="user_id"
+                                        <label for="price"
                                             class="block text-sm font-medium text-slate-700 dark:text-navy-100">
                                             Price
                                         </label>
-                                        <input type="text" name="price" id="name" required
+                                        <input type="number" step="0.01" name="price" id="price" required
                                             class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:ring focus:ring-primary/20 dark:border-navy-500 dark:bg-navy-700 dark:text-navy-50 dark:placeholder-navy-300 dark:focus:border-accent"
-                                            placeholder="Enter Price">
+                                            placeholder="Enter Price" value="{{ old('price') }}">
                                         @error('price')
                                             <span class="text-xs text-error">{{ $message }}</span>
                                         @enderror
                                     </div>
+
+                                    <!-- Duration -->
                                     <div>
-                                        <label for="user_id"
+                                        <label for="duration"
                                             class="block text-sm font-medium text-slate-700 dark:text-navy-100">
                                             Duration
                                         </label>
-                                        <input type="text" name="duration" id="name" required
+                                        <input type="number" name="duration" id="duration" required
                                             class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:ring focus:ring-primary/20 dark:border-navy-500 dark:bg-navy-700 dark:text-navy-50 dark:placeholder-navy-300 dark:focus:border-accent"
-                                            placeholder="Enter Duration">
+                                            placeholder="Enter Duration (hours)" value="{{ old('duration') }}">
                                         @error('duration')
                                             <span class="text-xs text-error">{{ $message }}</span>
                                         @enderror
                                     </div>
+
+                                    <!-- Category -->
                                     <div>
-                                        <label for="user_id"
+                                        <label for="category"
                                             class="block text-sm font-medium text-slate-700 dark:text-navy-100">
                                             Category
                                         </label>
-                                        <input type="text" name="category" id="name" required
+                                        <input type="text" name="category" id="category" required
                                             class="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:ring focus:ring-primary/20 dark:border-navy-500 dark:bg-navy-700 dark:text-navy-50 dark:placeholder-navy-300 dark:focus:border-accent"
-                                            placeholder="Enter Category">
-                                        @error('categroy')
+                                            placeholder="Enter Category" value="{{ old('category') }}">
+                                        @error('category')
                                             <span class="text-xs text-error">{{ $message }}</span>
                                         @enderror
                                     </div>
-
                                 </div>
 
-                                <!-- Submit Button -->
                                 <div class="mt-6 text-center">
                                     <button type="submit"
                                         class="btn bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
-                                        Save Loan Details
+                                        Save Course Details
                                     </button>
                                 </div>
                             </form>
@@ -179,17 +185,17 @@
 
                     <h3 class="pt-3 text-lg font-medium text-slate-700 dark:text-navy-100">Category</h3>
                     <p class="text-xs+">{{ $course->category }}</p>
-                    <form action="{{ route('course.store') }}" method="POST" class="w-full mt-5">
+                    <form action="{{ route('admin.courses.delete', $course->id) }}" method="POST"
+                        class="w-full mt-5"
+                        onsubmit="return confirm('Are you sure you want to delete this Course Plan?');">
                         @csrf
-                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+                        @method('DELETE')
                         <div class="flex justify-center">
                             <button type="submit"
                                 class="btn mt-5 space-x-2 rounded-full bg-primary font-medium text-white hover:bg-primary-focus focus:bg-primary-focus active:bg-primary-focus/90 dark:bg-accent dark:hover:bg-accent-focus dark:focus:bg-accent-focus dark:active:bg-accent/90">
                                 <span>Delete Course</span>
                             </button>
                         </div>
-
-
                     </form>
                 </div>
             @endforeach

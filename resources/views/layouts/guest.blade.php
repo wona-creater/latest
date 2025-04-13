@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Real World University Platform</title>
+    <title>Black White</title>
     <!-- FAVICON LINK -->
     <link rel="shortcut icon" href="/backend/images/app-logo.png" height="10" width="20" type="image/x-icon" />
     <!-- STYLESHEETS -->
@@ -73,17 +73,23 @@
     <!--================================= NAVIGATION END ==========================================-->
     <!--=================================  HEADER-1 START ==========================================-->
     <header>
-        <div class="header-bgimage-1 bgimage-property clearfix" id="home">
+        <div class="header-bgimage-1 bgimage-property  mt-0 clearfix" id="home">
             <div class="container">
                 <div class="col-sm-12 header-div-1 header-padding text-center">
                     <h1>The Real World University Platform</h1>
                     <p class="second-para">Learn and Earn with us</p>
                     <div class="header-btn">
-                        <a href="{{ route ('register')}}" class="btn btn-1">Create Free Account</a>
+                        <a href="{{ route('register') }}" class="btn btn-1">Create Free Account</a>
+                    </div> <br>
+                    <!-- Vimeo Video Embed -->
+                    <div class="video-wrapper"
+                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+                        <iframe title="vimeo-player" src="https://player.vimeo.com/video/872376280?h=2747630af7"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
-        </div>
     </header>
     <!--================================= HEADER-1 ENDS ============================================-->
 
@@ -123,5 +129,6 @@
     <script type="text/javascript" src="/frontend/js/custom/custom.js"></script>
 </body>
 
+<!-- Mirrored from www.evethemes.com/demo/lp/black-white/preview/black/default.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Apr 2025 15:40:12 GMT -->
 
 </html>
