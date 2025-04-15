@@ -5,7 +5,7 @@
         <section class="section-padding bgimage-property" id="services">
             <div class="container">
                 <div class="heading-div-1 text-center">
-                    <h2>Unlock Your Financial Potential</h2>
+                    <h2>ALL MODERN WEALTH CREATION METHODS</h2>
                     <div class="underline"></div>
                 </div>
 
@@ -13,40 +13,40 @@
                     <div class="col-xs-6 col-sm-6 col-md-3 text-center services-space-2 services-space-3 onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x1.png" alt="48x48x1" class="image-bottom-space1" />
-                            <h5><a href="#">Elite Courses</a></h5>
+                            <h5><a href="#">eCommerce Mastery</a></h5>
                             <p class="content-top-space1">
-                                Master wealth-building strategies with exclusive courses crafted by industry titans.
-                                Elevate your financial expertise today.
+                                Launch and scale your online store with proven strategies.
+                                Turn clicks into profits with expert guidance.
                             </p>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 text-center services-space-2 services-space-3 onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x2.png" alt="48x48x2" class="image-bottom-space1" />
-                            <h5><a href="#">Staking Opportunities</a></h5>
+                            <h5><a href="#">Amazon FBA Success</a></h5>
                             <p class="content-top-space1">
-                                Access curated, high-yield Stakes reserved for the elite. Grow your wealth with
-                                confidence and precision.
+                                Build a thriving Amazon business with insider techniques.
+                                Maximize sales and dominate the marketplace.
                             </p>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 text-center services-space-1 services-space-2 onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x3.png" alt="48x48x3" class="image-bottom-space1" />
-                            <h5><a href="#">Expert Mentorship</a></h5>
+                            <h5><a href="#">AI Skills Boost</a></h5>
                             <p class="content-top-space1">
-                                Learn directly from top investors and entrepreneurs. Get personalized guidance to
-                                accelerate your success.
+                                Master cutting-edge AI tools to future-proof your career.
+                                Unlock high-demand opportunities with practical training.
                             </p>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 text-center services-space-1 services-space-2 onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x4.png" alt="48x48x4" class="image-bottom-space1" />
-                            <h5><a href="#">Wealth Strategies</a></h5>
+                            <h5><a href="#">Freelancing & Copywriting</a></h5>
                             <p class="content-top-space1">
-                                Discover proven tactics to multiply your income. Our courses deliver actionable insights
-                                for lasting financial freedom.
+                                Kickstart your freelance career with persuasive copywriting skills.
+                                Land high-paying gigs with our proven roadmap.
                             </p>
                         </div>
                     </div>
@@ -54,10 +54,10 @@
                         class="col-xs-6 col-sm-6 col-md-3 text-center services-space services-space-1 services-space-2 onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x5.png" alt="48x48x5" class="image-bottom-space1" />
-                            <h5><a href="#">Exclusive Network</a></h5>
+                            <h5><a href="#">Analysis & NFTs</a></h5>
                             <p class="content-top-space1">
-                                Join a private community of high-achievers. Unlock doors to elite partnerships and
-                                insider opportunities.
+                                Dive into NFT markets with sharp analytical skills.
+                                Profit from digital assets with expert insights.
                             </p>
                         </div>
                     </div>
@@ -65,30 +65,30 @@
                         class="col-xs-6 col-sm-6 col-md-3 text-center services-space services-space-1 services-space-2 onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x6.png" alt="48x48x6" class="image-bottom-space1" />
-                            <h5><a href="#">Portfolio Growth</a></h5>
+                            <h5><a href="#">Stocks & Investing</a></h5>
                             <p class="content-top-space1">
-                                Maximize returns with tailored investment plans. Our expertise ensures your portfolio
-                                thrives in any market.
+                                Grow your wealth with smart stock market strategies.
+                                Learn to invest confidently from top traders.
                             </p>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 text-center services-space services-space-2 onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x7.png" alt="48x48x7" class="image-bottom-space1" />
-                            <h5><a href="#">Market Insights</a></h5>
+                            <h5><a href="#">Affiliate Marketing</a></h5>
                             <p class="content-top-space1">
-                                Stay ahead with real-time trends and forecasts. Our courses equip you to seize lucrative
-                                opportunities first.
+                                Earn passive income through affiliate marketing mastery.
+                                Discover tactics to drive sales and commissions.
                             </p>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 text-center services-space onecolumn-res">
                         <div class="services-div">
                             <img src="/frontend/images/48x48x8.png" alt="48x48x8" class="image-bottom-space1" />
-                            <h5><a href="#">Dedicated Support</a></h5>
+                            <h5><a href="#">19 Ways to Earn Online</a></h5>
                             <p class="content-top-space1">
-                                Get 24/7 assistance from our wealth experts. We’re here to ensure your journey to
-                                success is seamless.
+                                Explore 19 proven methods to make money online.
+                                Start your income journey with actionable steps.
                             </p>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-md-6 col-md-push-6 features-image res-space">
-                        <img src="/frontend/images/555x590.jpg" alt="555x590" class="img-responsive" />
+                        <img src="/frontend/images/side.png" alt="555x590" class="img-responsive" />
                     </div>
                     <div class="col-sm-12 col-md-6 col-md-pull-6 features-col">
                         <ul class="list-ul content-ul">
@@ -325,9 +325,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-space picture-item"
                         data-groups='["all","development", "graphic"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x1.jpg" title="Gallery">
+                            <a href="images/tate.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x1.jpg" alt="520x480x1"
+                                    <img src="/frontend/images/tate.png" alt="520x480x1"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -339,9 +339,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-space picture-item"
                         data-groups='["all","design", "graphic"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x2.jpg" title="Gallery">
+                            <a href="/images/tate1.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x2.jpg" alt="520x480x2"
+                                    <img src="/frontend/images/tate1.png" alt="520x480x2"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -353,9 +353,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-space picture-item"
                         data-groups='["all","development","marketing"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x3.jpg" title="Gallery">
+                            <a href="/images/tate2.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x3.jpg" alt="520x480x3"
+                                    <img src="/frontend/images/tate2.png" alt="520x480x3"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -367,9 +367,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-space picture-item"
                         data-groups='["all","design"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x4.jpg" title="Gallery">
+                            <a href="/images/tate3.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x4.jpg" alt="520x480x4"
+                                    <img src="/frontend/images/tate3.png" alt="520x480x4"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -381,9 +381,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-row-2 picture-item"
                         data-groups='["all","design","branding"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x5.jpg" title="Gallery">
+                            <a href="images/tate4.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x5.jpg" alt="520x480x5"
+                                    <img src="/frontend/images/tate4.png" alt="520x480x5"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -395,9 +395,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-row-2 picture-item"
                         data-groups='["all","development", "marketing"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x6.jpg" title="Gallery">
+                            <a href="images/tate5.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x6.jpg" alt="520x480x6"
+                                    <img src="/frontend/images/tate5.png" alt="520x480x6"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -409,9 +409,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-row-2 picture-item"
                         data-groups='["all","development", "graphic"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x7.jpg" title="Gallery">
+                            <a href="images/tate6.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x7.jpg" alt="520x480x7"
+                                    <img src="/frontend/images/tate6.png" alt="520x480x7"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -423,9 +423,9 @@
                     <div class="col-sm-3 col-xs-6 gallery-col gallery-row-2 picture-item"
                         data-groups='["all","design", "branding"]'>
                         <div class="gallery-image picture-item__inner">
-                            <a href="images/520x480x8.jpg" title="Gallery">
+                            <a href="images/tate7.png" title="Gallery">
                                 <div class="gallery-inner">
-                                    <img src="/frontend/images/520x480x8.jpg" alt="520x480x8"
+                                    <img src="/frontend/images/tate7.png" alt="520x480x8"
                                         class="img-responsive" />
                                     <div class="gallery-caption">
                                         <i class="fa fa-search-plus" aria-hidden="true"></i>
@@ -504,119 +504,107 @@
                         <div class="item">
                             <div class="testimonial-div">
                                 <div class="testimonial-name-div">
-                                    <div class="list-div">
-                                        <div class="list-div-left">
-                                            <img src="/frontend/images/80x80x1.png" alt="80x80x1" />
-                                        </div>
-                                        <div class="list-div-body">
-                                            <p class="testimonial-name">Laura Bennett</p>
-                                            <p class="testimonial-name1">Private Investor</p>
-                                        </div>
+                                    <div class="gallery-image picture-item__inner">
+                                        <a href="/frontend/images/test1.png" title="Gallery">
+                                            <div class="gallery-inner">
+                                                <img src="/frontend/images/test11.png" alt="520x480x1"
+                                                    class="img-responsive" />
+                                                <div class="gallery-caption">
+                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <p class="testimonial-para">
-                                    "The courses completely changed how I approach wealth-building. The strategies I
-                                    learned helped me diversify my portfolio and boost my returns by 30% in just six
-                                    months."
-                                </p>
                             </div>
                         </div>
                         <div class="item">
                             <div class="testimonial-div">
                                 <div class="testimonial-name-div">
-                                    <div class="list-div">
-                                        <div class="list-div-left">
-                                            <img src="/frontend/images/80x80x2.png" alt="80x80x2" />
-                                        </div>
-                                        <div class="list-div-body">
-                                            <p class="testimonial-name">James Carter</p>
-                                            <p class="testimonial-name1">Entrepreneur</p>
-                                        </div>
+                                    <div class="gallery-image picture-item__inner">
+                                        <a href="/frontend/images/test2.png" title="Gallery">
+                                            <div class="gallery-inner">
+                                                <img src="/frontend/images/test2.png" alt="520x480x1"
+                                                    class="img-responsive" />
+                                                <div class="gallery-caption">
+                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <p class="testimonial-para">
-                                    "The investment opportunities I accessed through this platform were a game-changer.
-                                    Exclusive deals and expert guidance helped me achieve financial goals I thought were
-                                    years away."
-                                </p>
                             </div>
                         </div>
                         <div class="item">
                             <div class="testimonial-div">
                                 <div class="testimonial-name-div">
-                                    <div class="list-div">
-                                        <div class="list-div-left">
-                                            <img src="/frontend/images/80x80x3.png" alt="80x80x3" />
-                                        </div>
-                                        <div class="list-div-body">
-                                            <p class="testimonial-name">Michael Patel</p>
-                                            <p class="testimonial-name1">Hedge Fund Manager</p>
-                                        </div>
+                                    <div class="gallery-image picture-item__inner">
+                                        <a href="/frontend/images/test3.png" title="Gallery">
+                                            <div class="gallery-inner">
+                                                <img src="/frontend/images/test3.png" alt="520x480x1"
+                                                    class="img-responsive" />
+                                                <div class="gallery-caption">
+                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <p class="testimonial-para">
-                                    "The mentorship in these courses is unparalleled. Learning from industry leaders
-                                    gave me insights that transformed my approach to high-stakes investing."
-                                </p>
                             </div>
                         </div>
                         <div class="item">
                             <div class="testimonial-div">
                                 <div class="testimonial-name-div">
-                                    <div class="list-div">
-                                        <div class="list-div-left">
-                                            <img src="/frontend/images/80x80x4.png" alt="80x80x4" />
-                                        </div>
-                                        <div class="list-div-body">
-                                            <p class="testimonial-name">Sophie Nguyen</p>
-                                            <p class="testimonial-name1">Real Estate Investor</p>
-                                        </div>
+                                    <div class="gallery-image picture-item__inner">
+                                        <a href="/frontend/images/test4.png" title="Gallery">
+                                            <div class="gallery-inner">
+                                                <img src="/frontend/images/test4.png" alt="520x480x1"
+                                                    class="img-responsive" />
+                                                <div class="gallery-caption">
+                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <p class="testimonial-para">
-                                    "The elite network I joined through this program opened doors to opportunities I
-                                    didn’t know existed. It’s been a catalyst for my financial success."
-                                </p>
                             </div>
                         </div>
                         <div class="item">
                             <div class="testimonial-div">
                                 <div class="testimonial-name-div">
-                                    <div class="list-div">
-                                        <div class="list-div-left">
-                                            <img src="/frontend/images/80x80x5.png" alt="80x80x5" />
-                                        </div>
-                                        <div class="list-div-body">
-                                            <p class="testimonial-name">David Reynolds</p>
-                                            <p class="testimonial-name1">Tech Founder</p>
-                                        </div>
+                                    <div class="gallery-image picture-item__inner">
+                                        <a href="/frontend/images/test5.png" title="Gallery">
+                                            <div class="gallery-inner">
+                                                <img src="/frontend/images/test5.png" alt="520x480x1"
+                                                    class="img-responsive" />
+                                                <div class="gallery-caption">
+                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <p class="testimonial-para">
-                                    "These courses gave me actionable tools to grow my wealth strategically. The clarity
-                                    and expertise delivered results far beyond my expectations."
-                                </p>
                             </div>
                         </div>
                         <div class="item">
                             <div class="testimonial-div">
                                 <div class="testimonial-name-div">
-                                    <div class="list-div">
-                                        <div class="list-div-left">
-                                            <img src="/frontend/images/80x80x6.png" alt="80x80x6" />
-                                        </div>
-                                        <div class="list-div-body">
-                                            <p class="testimonial-name">Emma Thompson</p>
-                                            <p class="testimonial-name1">Financial Consultant</p>
-                                        </div>
+                                    <div class="gallery-image picture-item__inner">
+                                        <a href="/frontend/images/test6.png" title="Gallery">
+                                            <div class="gallery-inner">
+                                                <img src="/frontend/images/test6.png" alt="520x480x1"
+                                                    class="img-responsive" />
+                                                <div class="gallery-caption">
+                                                    <i class="fa fa-search-plus" aria-hidden="true"></i>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <p class="testimonial-para">
-                                    "The personalized support and insider market insights I gained helped me confidently
-                                    navigate complex investments. This program is a must for serious wealth-builders."
-                                </p>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -826,43 +814,7 @@
         </section>
         <!--================================= NEWS ENDS ==========================================-->
 
-        <!--================================= SPONSORS-2 START ==========================================-->
-        <div class="section-2-bg section-padding">
-            <div class="container">
-                <div class="heading-div-1 text-center">
-                    <h2>Our Trusted Partners</h2>
-                    <div class="underline"></div>
-                </div>
-                <div class="row client-row">
-                    <div class="col-xs-6 col-sm-3 clients-res-space onecolumn-res clients-res-space1">
-                        <a href="https://www.fidelity.com" target="_blank">
-                            <img src="https://images.unsplash.com/photo-1644368332242-096cd9254fac?ixlib=rb-4.0.3&auto=format&fit=crop&w=280&h=200&q=80"
-                                alt="Fidelity Investments" class="img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 clients-res-space onecolumn-res clients-res-space1">
-                        <a href="https://www.coursera.org" target="_blank">
-                            <img src="https://images.unsplash.com/photo-1666875753105-005a36a375f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=280&h=200&q=80"
-                                alt="Coursera" class="img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 onecolumn-res clients-res-space1">
-                        <a href="https://www.bloomberg.com" target="_blank">
-                            <img src="https://images.unsplash.com/photo-1618042164219-62c68ff3dbbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=280&h=200&q=80"
-                                alt="Bloomberg" class="img-responsive" />
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 onecolumn-res">
-                        <a href="https://www.masterclass.com" target="_blank">
-                            <img src="https://images.unsplash.com/photo-1516321318423-592bcdfeda29?ixlib=rb-4.0.3&auto=format&fit=crop&w=280&h=200&q=80"
-                                alt="MasterClass" class="img-responsive" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--================================= SPONSORS-2 ENDS ==========================================-->
-
+     
         <!--================================= HEADER STRIP START ==========================================-->
         <div class="header-strip-bg bgimage-property">
             <div class="container">
@@ -977,7 +929,9 @@
                             <ul class="content-ul contact-address contact-address-space">
                                 <li><img src="/frontend/images/32x32x5.png" alt="Email Icon" /></li>
                                 <li>
-                                    <p><a href="mailto:info@therealworduniversityplatform.com">info@therealworduniversityplatform.com</a></p>
+                                    <p><a
+                                            href="mailto:info@therealworduniversityplatform.com">info@therealworduniversityplatform.com</a>
+                                    </p>
                                 </li>
                             </ul>
                             <ul class="content-ul contact-address contact-address-space">
@@ -989,7 +943,9 @@
                             <ul class="content-ul contact-address contact-address-space">
                                 <li><img src="/frontend/images/32x32x7.png" alt="Website Icon" /></li>
                                 <li>
-                                    <p><a href="https://www.therealworduniversityplatform.com">therealworduniversityplatform</a></p>
+                                    <p><a
+                                            href="https://www.therealworduniversityplatform.com">therealworduniversityplatform</a>
+                                    </p>
                                 </li>
                             </ul>
                             <ul class="content-ul contact-address">

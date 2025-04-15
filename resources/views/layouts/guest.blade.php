@@ -30,7 +30,7 @@
         <nav class="topbar navbar navbar-default navbar-fixed-top clearfix" id="top-nav">
             <div class="container">
                 <div class="logo-image">
-                    <a href="#"><img src="/backend/images/app-logo.png" height="70" width="120"
+                    <a href="#"><img src="/backend/images/app-logo.png" height="50" width="50"
                             alt="150x50" /></a>
                 </div>
                 <div class="navbar-right nav">

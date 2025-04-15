@@ -967,13 +967,13 @@ h6 {
 }
 
 .two-left-bgimage {
-    background-image: url("../../images/1000x530x1.jpg");
+    background-image: url("../../images/side1.jpg");
     height: 475px;
     width: 50%;
 }
 
 .two-right-bgimage {
-    background-image: url("../../images/1000x530x2.jpg");
+    background-image: url("../../images/side2.jpg");
     height: 472px;
     width: 50%;
 }
