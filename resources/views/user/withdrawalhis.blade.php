@@ -1,5 +1,3 @@
-
-
 <x-app-layout>
     <!-- Main Content Wrapper -->
     <main class="main-content w-full px-[var(--margin-x)] pb-8">
@@ -19,78 +17,76 @@
                 </li>
             </ul>
         </div>
-            <!-- Full Width Zebra Table -->
-            <div class="card pb-4">
-                <div class="my-3 flex h-8 items-center justify-between px-4 sm:px-5">
-                    <h2 class="font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100 lg:text-base">
-                       Withdrawal History Details
-                    </h2>
-                </div>
-                <div>
-                    <div class="mt-5">
-                        <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
-                            <table class="is-zebra w-full text-left">
-                                <thead>
-                                    <tr>
-                                        <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                            #
-                                        </th>
-                                        <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                            Trans_id
-                                        </th>
-                                        <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                            Amount
-                                        </th>
-                                        <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                            Status
-                                        </th>
-                                        <th
-                                            class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                            Date/Time
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($withdrawals as $withdrawal)
-
-
+        <!-- Full Width Zebra Table -->
+        <div class="card pb-4">
+            <div class="my-3 flex h-8 items-center justify-between px-4 sm:px-5">
+                <h2 class="font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100 lg:text-base">
+                    Withdrawal History Details
+                </h2>
+            </div>
+            <div>
+                <div class="mt-5">
+                    <div class="is-scrollbar-hidden min-w-full overflow-x-auto">
+                        <table class="is-zebra w-full text-left">
+                            <thead>
+                                <tr>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        #
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        Trans_id
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        Amount
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        Status
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        Date/Time
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($withdrawals as $withdrawal)
                                     <tr>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">1</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            {{$withdrawal->transaction_id}}
+                                            {{ $withdrawal->transaction_id }}
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                           {{$withdrawal->amount}}
+                                            {{ $withdrawal->amount }}
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            {{$withdrawal->status}}
+                                            {{ $withdrawal->status }}
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            {{$withdrawal->created_at->format('Y-m-d H:i')}}
+                                            {{ $withdrawal->created_at->format('Y-m-d H:i') }}
                                         </td>
                                     </tr>
-                                    @endforeach
+                                @endforeach
 
 
 
-                                </tbody>
-                            </table>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="code-wrapper hidden px-4 pt-4 sm:px-5">
-                    <pre class="is-scrollbar-hidden max-h-96 overflow-auto rounded-lg" x-init="hljs.highlightElement($el)">
+            </div>
+            <div class="code-wrapper hidden px-4 pt-4 sm:px-5">
+                <pre class="is-scrollbar-hidden max-h-96 overflow-auto rounded-lg" x-init="hljs.highlightElement($el)">
             <code class="language-html" x-ignore>
 &lt;div class=&quot;is-scrollbar-hidden min-w-full overflow-x-auto&quot;&gt;&#13;&#10;    &lt;table class=&quot;is-zebra w-full text-left&quot;&gt;&#13;&#10;      &lt;thead&gt;&#13;&#10;        &lt;tr&gt;&#13;&#10;          &lt;th&#13;&#10;            class=&quot;whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5&quot;&#13;&#10;          &gt;&#13;&#10;            #&#13;&#10;          &lt;/th&gt;&#13;&#10;          &lt;th&#13;&#10;            class=&quot;whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5&quot;&#13;&#10;          &gt;&#13;&#10;            Name&#13;&#10;          &lt;/th&gt;&#13;&#10;          &lt;th&#13;&#10;            class=&quot;whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5&quot;&#13;&#10;          &gt;&#13;&#10;            Job&#13;&#10;          &lt;/th&gt;&#13;&#10;          &lt;th&#13;&#10;            class=&quot;whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5&quot;&#13;&#10;          &gt;&#13;&#10;            Favorite Color&#13;&#10;          &lt;/th&gt;&#13;&#10;        &lt;/tr&gt;&#13;&#10;      &lt;/thead&gt;&#13;&#10;      &lt;tbody&gt;&#13;&#10;        &lt;tr&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;1&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Cy Ganderton&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;&#13;&#10;            Quality Control Specialist&#13;&#10;          &lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Blue&lt;/td&gt;&#13;&#10;        &lt;/tr&gt;&#13;&#10;        &lt;tr&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;2&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Hart Hagerty&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;&#13;&#10;            Desktop Support Technician&#13;&#10;          &lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Purple&lt;/td&gt;&#13;&#10;        &lt;/tr&gt;&#13;&#10;        &lt;tr&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;3&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Brice Swyre&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Tax Accountant&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Red&lt;/td&gt;&#13;&#10;        &lt;/tr&gt;&#13;&#10;        &lt;tr&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;4&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Marjy Ferencz&lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;&#13;&#10;            Office Assistant I&#13;&#10;          &lt;/td&gt;&#13;&#10;          &lt;td class=&quot;whitespace-nowrap px-4 py-3 sm:px-5&quot;&gt;Crimson&lt;/td&gt;&#13;&#10;        &lt;/tr&gt;&#13;&#10;      &lt;/tbody&gt;&#13;&#10;    &lt;/table&gt;&#13;&#10;  &lt;/div&gt;</code>
           </pre>
-                </div>
             </div>
+        </div>
         </div>
     </main>
     </div>
-    
+
 </x-app-layout>

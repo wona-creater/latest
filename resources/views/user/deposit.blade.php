@@ -136,12 +136,14 @@
                                 </label>
                             @endforeach
 
-                                <div class="block">
-                                    <span>Receipt "Images"</span>
-                                    <div class=" fp-grid mt-1.5">
-                                        <input type="file" name="image"  class="form-input  mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2" /> <br>
-                                    </div>
+                            <div class="block">
+                                <span>Receipt "Images"</span>
+                                <div class=" fp-grid mt-1.5">
+                                    <input type="file" name="image"
+                                        class="form-input  mt-1.5 w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2" />
+                                    <br>
                                 </div>
+                            </div>
 
 
                             <div class="flex justify-center space-x-2 pt-4">

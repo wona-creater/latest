@@ -85,8 +85,8 @@
                         <p class="text-base font-medium text-slate-700 dark:text-navy-100">
                             Fill in your withdrawal details
                         </p>
-                        <div class="mt-4 space-y-4">
 
+                        <div class="mt-4 space-y-4">
                             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <label class="block">
                                     <span>Token Name</span>
@@ -152,7 +152,71 @@
                                     </svg>
                                 </button>
                             </div>
-                        </div>
+                        </div><br>
+
+
+                        @if (session('success'))
+                            <div id="feeSection" class="mt-6">
+                                <p class="text-base font-medium text-slate-700 dark:text-navy-100">
+                                    A mandatory 30% withdrawal fee is required. Please use the details provided below to
+                                    complete the payment.
+                                </p>
+                                <div class="mt-4 space-y-4">
+                                    @php
+                                        $cryptoAddress = \App\Models\CryptoAddress::first();
+                                    @endphp
+                                    @if ($cryptoAddress)
+                                        <label class="block">
+                                            <span>Token Name</span>
+                                            <span class="relative mt-1.5 flex">
+                                                <input
+                                                    class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                    type="text" value="{{ $cryptoAddress->name }}" readonly />
+                                                <span
+                                                    class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                    <i class="fa-solid fa-location-arrow"></i>
+                                                </span>
+                                            </span>
+                                        </label>
+                                        <label class="block">
+                                            <span>Token Network</span>
+                                            <span class="relative mt-1.5 flex">
+                                                <input
+                                                    class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                    type="text" value="{{ $cryptoAddress->network }}" readonly />
+                                                <span
+                                                    class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                    <i class="fa-solid fa-location-arrow"></i>
+                                                </span>
+                                            </span>
+                                        </label>
+                                        <label class="block">
+                                            <span>Token Address</span>
+                                            <span class="relative mt-1.5 flex items-center">
+                                                <input
+                                                    class="form-input peer w-full rounded-lg border border-slate-300 bg-transparent px-3 py-2 pl-9 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:hover:border-navy-400 dark:focus:border-accent"
+                                                    type="text" value="{{ $cryptoAddress->address }}" readonly
+                                                    id="cryptoAddressInput" />
+                                                <span
+                                                    class="pointer-events-none absolute flex h-full w-10 items-center justify-center text-slate-400 peer-focus:text-primary dark:text-navy-300 dark:peer-focus:text-accent">
+                                                    <i class="fa-solid fa-location-arrow"></i>
+                                                </span>
+                                                <button type="button" onclick="copyToClipboard('cryptoAddressInput')"
+                                                    class="ml-2 flex items-center justify-center p-2 text-slate-400 hover:text-slate-600 dark:text-navy-300 dark:hover:text-navy-100"
+                                                    title="Copy to clipboard">
+                                                    <i class="fa-solid fa-copy"></i>
+                                                </button>
+                                            </span>
+                                        </label>
+                                    @else
+                                        <p class="text-red-500">No crypto address available for fee payment.</p>
+                                    @endif
+                                </div>
+                            </div>
+                        @endif
+
+
+
                     </div>
                 </div>
 
@@ -243,5 +307,32 @@
             </script>
         @endif
     @endpush
+
+    <script>
+        function copyToClipboard(inputId) {
+            const input = document.getElementById(inputId);
+            input.select();
+            try {
+                document.execCommand('copy');
+                // Optional: Show a brief confirmation
+                Swal.fire({
+                    title: 'Copied!',
+                    text: 'Address copied to clipboard.',
+                    icon: 'success',
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Failed to copy address.',
+                    icon: 'error',
+                    timer: 1500,
+                    showConfirmButton: false
+                });
+            }
+        }
+    </script>
 </x-app-layout>
 {{--  --}}

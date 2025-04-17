@@ -49,14 +49,17 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/dashboard/investhistory', [userController::class, 'investhistory'])->name('investhis');
 
     Route::get('/dashboard/course', [userController::class, 'course'])->name('course');
+    Route::get('/dashboard/coursehisotry', [userController::class, 'coursehistory'])->name('course.history');
     Route::post('/dashboard/coursestore', [userController::class, 'coursestore'])->name('course.store');
 
     Route::get('/dashboard/signal', [userController::class, 'signal'])->name('signal');
+    Route::get('/dashboard/signalhisotry', [userController::class, 'signalhistory'])->name('signal.history');
     Route::post('/dashboard/signalstore', [userController::class, 'signalstore'])->name('signal.store');
 
     Route::get('/dashboard/copytrade', [userController::class, 'copytrade'])->name('copytrade');
 
     Route::get('/dashboard/loan', [userController::class, 'loan'])->name('loan');
+    Route::get('/dashboard/loanhistory', [userController::class, 'loanhistory'])->name('loan.history');
     Route::post('/dashboard/loanstore', [userController::class, 'loanstore'])->name('loan.store');
 
 

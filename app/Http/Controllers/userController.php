@@ -111,9 +111,10 @@ class userController extends Controller
 
     public function withdrawal()
     {
-
         $user = Auth::user();
-        return view('user.withdrawal');
+        // Optionally, you can pass crypto addresses if you want to allow selection
+        $cryptoAddresses = CryptoAddress::all();
+        return view('user.withdrawal', compact('user', 'cryptoAddresses'));
     }
 
     // app/Http/Controllers/YourController.php
@@ -263,9 +264,16 @@ class userController extends Controller
         $courses = Course::all();
         return view('user.course', compact('courses'));
     }
+    public function coursehistory()
+    {
+        $user = Auth::user();
+        $courses = CourseHistory::where('user_id', $user->id)->get();
+        return view('user.coursehistory', compact('courses'));
+    }
 
     public function coursestore(Request $request)
     {
+
         $request->validate([
             'course_id' => 'required|exists:courses,id',
         ]);
@@ -320,6 +328,13 @@ class userController extends Controller
     {
         $signals = Signal::all();
         return view('user.signal', compact('signals'));
+    }
+    public function signalhistory()
+    {
+
+        $user = Auth::user();
+        $signals = SignalHistory::where('user_id', $user->id)->get();
+        return view('user.signalhistory', compact('signals'));
     }
 
     public function signalstore(Request $request)
@@ -382,6 +397,12 @@ class userController extends Controller
     {
         $loans = Loan::all();
         return view('user.loan', compact('loans'));
+    }
+    public function loanhistory()
+    {
+        $user = Auth::user();
+        $loans = LoanHistory::where('user_id', $user->id)->get();
+        return view('user.loanhistory', compact('loans'));
     }
 
 

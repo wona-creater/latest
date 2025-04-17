@@ -362,7 +362,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a x-data="navLink" href="#"
+                                <a x-data="navLink" href="{{ route ('loan.history')}}"
                                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                         'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                                     class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4">
@@ -401,7 +401,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a x-data="navLink" href="#"
+                                <a x-data="navLink" href="{{ route ('course.history')}}"
                                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                         'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                                     class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4">
@@ -440,7 +440,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a x-data="navLink" href="#"
+                                <a x-data="navLink" href="{{ route ('signal.history')}}"
                                     :class="isActive ? 'font-medium text-primary dark:text-accent-light' :
                                         'text-slate-600 hover:text-slate-900 dark:text-navy-200 dark:hover:text-navy-50'"
                                     class="flex items-center justify-between p-2 text-xs+ tracking-wide outline-none transition-[color,padding-left] duration-300 ease-in-out hover:pl-4">
@@ -468,7 +468,7 @@
                         </a>
                     </li>
 
-                  
+
 
                 </ul>
                 <div class="my-3 mx-4 h-px bg-slate-200 dark:bg-navy-500"></div>
