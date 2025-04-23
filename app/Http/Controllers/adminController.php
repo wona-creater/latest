@@ -143,6 +143,29 @@ class adminController extends Controller
             ->with('success', 'Investment plan saved successfully');
     }
 
+    public function investments()
+    {
+        $investments = Investment::with('user')->latest()->get();
+        return view('admin.investmenttable', compact('investments'));
+    }
+
+    public function updateInvestmentStatus(Request $request, Investment $investment)
+    {
+        Log::info('Request payload for investment:', $request->all());
+        $request->validate([
+            'status' => 'required|in:active,completed',
+        ]);
+
+        $investment->update(['status' => $request->status]);
+        Log::info('New status for investment ID ' . $investment->id . ': ' . $investment->fresh()->status);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Investment status updated successfully.',
+            'status' => $investment->status,
+        ]);
+    }
+
     public function loan()
     {
         $loans = Loan::with('user')->get();
