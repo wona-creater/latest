@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('price', 8, 2);
             $table->integer('duration');
             $table->string('category');
-            $table->string('status')->default('pending','active','Paid');
+            $table->string('status')->default('pending', 'active', 'Paid');
             $table->timestamps();
         });
     }

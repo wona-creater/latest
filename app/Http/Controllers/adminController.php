@@ -67,6 +67,28 @@ class adminController extends Controller
         return redirect()->back()->with('success', 'Course saved!');
     }
 
+    public function courseHistories()
+    {
+        $courseHistories = CourseHistory::with('user')->get();
+        return view('admin.coursetable', compact('courseHistories'));
+    }
+    public function updateCourseHistoryStatus(Request $request, CourseHistory $courseHistory)
+    {
+        Log::info('Request payload for course history:', $request->all());
+        $request->validate([
+            'status' => 'required|in:pending,active,Paid',
+        ]);
+
+        $courseHistory->update(['status' => $request->status]);
+        Log::info('New status for course history ID ' . $courseHistory->id . ': ' . $courseHistory->fresh()->status);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Course history status updated successfully.',
+            'status' => $courseHistory->status,
+        ]);
+    }
+
 
 
     public function deposit()
@@ -148,6 +170,28 @@ class adminController extends Controller
         return redirect()->back()->with('success', 'Loan saved!');
     }
 
+    public function loanHistories()
+    {
+        $loanHistories = LoanHistory::with('user')->get();
+        return view('admin.loantable', compact('loanHistories'));
+    }
+
+    public function updateLoanHistoryStatus(Request $request, LoanHistory $loanHistory)
+    {
+        Log::info('Request payload for loan history:', $request->all());
+        $request->validate([
+            'status' => 'required|in:pending,active,Paid',
+        ]);
+
+        $loanHistory->update(['status' => $request->status]);
+        Log::info('New status for loan history ID ' . $loanHistory->id . ': ' . $loanHistory->fresh()->status);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Loan history status updated successfully.',
+            'status' => $loanHistory->status,
+        ]);
+    }
 
 
     public function signal()
@@ -176,6 +220,30 @@ class adminController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Signal saved!');
+    }
+
+
+    public function signalHistories()
+    {
+        $signalHistories = SignalHistory::with('user')->get();
+        return view('admin.signaltable', compact('signalHistories'));
+    }
+
+    public function updateSignalHistoryStatus(Request $request, SignalHistory $signalHistory)
+    {
+        Log::info('Request payload for signal history:', $request->all());
+        $request->validate([
+            'status' => 'required|in:pending,Paid',
+        ]);
+
+        $signalHistory->update(['status' => $request->status]);
+        Log::info('New status for signal history ID ' . $signalHistory->id . ': ' . $signalHistory->fresh()->status);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Signal history status updated successfully.',
+            'status' => $signalHistory->status,
+        ]);
     }
 
 

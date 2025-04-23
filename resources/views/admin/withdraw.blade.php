@@ -134,7 +134,7 @@
                     newStatus === 'rejected' ? 'bg-error' : 'bg-warning'
                 } text-white`;
 
-                    fetch(`/dashboard/withdrawals/${withdrawalId}/status`, {
+                    fetch(`/admin/withdrawals/${withdrawalId}/status`, { 
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',

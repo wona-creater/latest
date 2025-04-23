@@ -3,7 +3,7 @@
     <main class="main-content w-full px-[var(--margin-x)] pb-8">
         <div class="flex items-center space-x-4 py-5 lg:py-6">
             <h2 class="text-xl font-medium text-slate-800 dark:text-navy-50 lg:text-2xl">
-                Deposit
+                Signal
             </h2>
             <div class="hidden h-full py-1 sm:flex">
                 <div class="h-full w-px bg-slate-300 dark:bg-navy-600"></div>
@@ -20,7 +20,7 @@
         <div class="card pb-4">
             <div class="my-3 flex h-8 items-center justify-between px-4 sm:px-5">
                 <h2 class="font-medium tracking-wide text-slate-700 line-clamp-1 dark:text-navy-100 lg:text-base">
-                    User Deposit History Details
+                    User Signal History Details
                 </h2>
             </div>
             <div>
@@ -35,15 +35,31 @@
                                     </th>
                                     <th
                                         class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        User Name
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        Signal ID
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Name
                                     </th>
                                     <th
                                         class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                        Trans_id
+                                        Monthly Price
                                     </th>
                                     <th
                                         class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                        Amount
+                                        Signal Count
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        Timeframes
+                                    </th>
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                        Alert Types
                                     </th>
                                     <th
                                         class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
@@ -55,52 +71,43 @@
                                     </th>
                                     <th
                                         class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
-                                        Image
-                                    </th>
-                                    <th
-                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Action
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($deposits as $deposit)
+                                @foreach ($signalHistories as $signalHistory)
                                     <tr>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $deposit->id }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $deposit->user->name }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $deposit->transaction_id }}
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $signalHistory->id }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $signalHistory->user->name }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $signalHistory->signal_id }}
+                                        </td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $signalHistory->name }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            {{ number_format($signalHistory->monthly_price, 2) }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            {{ $signalHistory->signal_count }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $signalHistory->timeframes }}
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            {{ number_format($deposit->amount, 2) }}</td>
+                                            {{ $signalHistory->alert_types }}</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                             <span
-                                                class="badge {{ $deposit->status === 'approved' ? 'bg-success' : ($deposit->status === 'rejected' ? 'bg-error' : 'bg-warning') }} text-white">
-                                                {{ ucfirst($deposit->status) }}
+                                                class="badge {{ $signalHistory->status === 'Paid' ? 'bg-success' : 'bg-warning' }} text-white">
+                                                {{ ucfirst($signalHistory->status) }}
                                             </span>
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            {{ $deposit->created_at->format('Y-m-d H:i') }}
+                                            {{ $signalHistory->created_at->format('Y-m-d H:i') }}
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            @if ($deposit->image)
-                                                <a href="{{ asset('storage/' . $deposit->image) }}" target="_blank">
-                                                    <img src="{{ asset('storage/' . $deposit->image) }}"
-                                                        alt="Deposit Image" class="h-10 w-10 object-cover">
-                                                </a>
-                                            @else
-                                                N/A
-                                            @endif
-                                        </td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            <select class="status-select" data-id="{{ $deposit->id }}">
+                                            <select class="status-select" data-id="{{ $signalHistory->id }}">
                                                 <option value="pending"
-                                                    {{ $deposit->status === 'pending' ? 'selected' : '' }}>Pending
-                                                </option>
-                                                <option value="approved"
-                                                    {{ $deposit->status === 'approved' ? 'selected' : '' }}>Approved
-                                                </option>
-                                                <option value="rejected"
-                                                    {{ $deposit->status === 'rejected' ? 'selected' : '' }}>Rejected
+                                                    {{ $signalHistory->status === 'pending' ? 'selected' : '' }}>
+                                                    Pending</option>
+                                                <option value="Paid"
+                                                    {{ $signalHistory->status === 'Paid' ? 'selected' : '' }}>Paid
                                                 </option>
                                             </select>
                                         </td>
@@ -118,19 +125,18 @@
         <script>
             document.querySelectorAll('.status-select').forEach(select => {
                 select.addEventListener('change', function() {
-                    const depositId = this.dataset.id;
+                    const signalHistoryId = this.dataset.id;
                     const newStatus = this.value;
                     const badge = this.closest('tr').querySelector('.badge');
-                    const previousStatus = badge.textContent.toLowerCase(); // Store current status for revert
+                    const previousStatus = badge.textContent.toLowerCase();
 
-                    // Optimistically update UI
+                    // Optimistic UI update
                     badge.textContent = newStatus.charAt(0).toUpperCase() + newStatus.slice(1);
                     badge.className = `badge ${
-                    newStatus === 'approved' ? 'bg-success' :
-                    newStatus === 'rejected' ? 'bg-error' : 'bg-warning'
-                } text-white`;
+                        newStatus === 'Paid' ? 'bg-success' : 'bg-warning'
+                    } text-white`;
 
-                    fetch(`/admin/deposits/${depositId}/status`, { 
+                    fetch(`/admin/signal-histories/${signalHistoryId}/status`, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -155,19 +161,16 @@
                         })
                         .catch(error => {
                             console.error('Error:', error);
-                            // Revert UI on failure
                             badge.textContent = previousStatus.charAt(0).toUpperCase() + previousStatus
                                 .slice(1);
                             badge.className = `badge ${
-                        previousStatus === 'approved' ? 'bg-success' :
-                        previousStatus === 'rejected' ? 'bg-error' : 'bg-warning'
-                    } text-white`;
-                            this.value = previousStatus; // Revert select
+                            previousStatus === 'Paid' ? 'bg-success' : 'bg-warning'
+                        } text-white`;
+                            this.value = previousStatus;
                             alert('Failed to update status: ' + error.message);
                         });
                 });
             });
         </script>
     @endpush
-
 </x-app-layout>

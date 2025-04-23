@@ -3,6 +3,7 @@
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\userController;
+use App\View\Components\admin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -77,6 +78,8 @@ Route::middleware('auth', 'verified')->group(function () {
 
     Route::get('/admin/dashboard/admin/course', [adminController::class, 'course'])->name('admin.course');
     Route::post('/admin/dashboard/admin/courses', [adminController::class, 'admincourse'])->name('admin.courses.store');
+    Route::get('/admin/course-histories', [adminController::class, 'courseHistories'])->name('admin.course-histories');
+    Route::put('/admin/course-histories/{courseHistory}/status', [adminController::class, 'updateCourseHistoryStatus'])->name('admin.course-histories.updateStatus');
 
     Route::get('/admin/dashboard/admin/deposit', [adminController::class, 'deposit'])->name('admin.deposit');
     Route::put('/admin/deposits/{deposit}/status', [AdminController::class, 'updatestatus'])->name('admin.deposits.updateStatus');
@@ -85,12 +88,16 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::post('/admin/dashboard/investmentplans', [adminController::class, 'storeInvestmentPlan'])->name('admin.investmentplans.store');
 
     Route::get('/admin/dashboard/admin/loan', [adminController::class, 'loan'])->name('admin.loan');
-    Route::post('/admin/dashboard/admin/loans', [adminController ::class, 'adminloan'])->name('admin.store');
+    Route::post('/admin/dashboard/admin/loans', [adminController::class, 'adminloan'])->name('admin.store');
+    Route::get('/admin/loan-histories', [AdminController::class, 'loanHistories'])->name('admin.loan-histories');
+    Route::put('/admin/loan-histories/{loanHistory}/status', [AdminController::class, 'updateLoanHistoryStatus'])->name('admin.loan-histories.updateStatus');
 
     Route::get('/admin/dashboard/plan', [adminController::class, 'plan'])->name('admin.plan');
 
     Route::get('/admin/dashboard/admin/signal', [adminController::class, 'signal'])->name('admin.signal');
     Route::post('/admin/dashboard/admin/signal', [adminController::class, 'adminsignal'])->name('admin.signals.store');
+    Route::get('/admin/signal-histories', [adminController::class, 'signalHistories'])->name('admin.signal-histories');
+    Route::put('/admin/signal-histories/{signalHistory}/status', [adminController::class, 'updateSignalHistoryStatus'])->name('admin.signal-histories.updateStatus');
 
 
     Route::get('/admin/dashboard/admin/withdrawal', [adminController::class, 'withdraw'])->name('admin.withdraw');
@@ -101,11 +108,11 @@ Route::middleware('auth', 'verified')->group(function () {
 
 
 
-Route::delete('/admin/dashboard/signals/{id}', [adminController::class, 'deleteSignal'])->name('admin.signals.delete');
-Route::delete('/admin/dashboard/loans/{id}', [adminController::class, 'deleteLoan'])->name('admin.loans.delete');
-Route::delete('/admin/dashboard/courses{id}', [adminController::class, 'deleteCourse'])->name('admin.courses.delete');
-Route::delete('/admin/dashboard/investments/{id}', [adminController::class, 'deleteInvestment'])->name('admin.investments.delete');
-Route::delete('/admin/dashboard/cryptoaddresses/{id}', [adminController::class, 'destroyaddress'])->name('cryptoaddress.destroy');
+    Route::delete('/admin/dashboard/signals/{id}', [adminController::class, 'deleteSignal'])->name('admin.signals.delete');
+    Route::delete('/admin/dashboard/loans/{id}', [adminController::class, 'deleteLoan'])->name('admin.loans.delete');
+    Route::delete('/admin/dashboard/courses{id}', [adminController::class, 'deleteCourse'])->name('admin.courses.delete');
+    Route::delete('/admin/dashboard/investments/{id}', [adminController::class, 'deleteInvestment'])->name('admin.investments.delete');
+    Route::delete('/admin/dashboard/cryptoaddresses/{id}', [adminController::class, 'destroyaddress'])->name('cryptoaddress.destroy');
 });
 
 require __DIR__ . '/auth.php';
