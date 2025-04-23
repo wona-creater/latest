@@ -95,7 +95,6 @@
         @endif
     @endpush
 
-    
 
 
 </x-app-layout>
