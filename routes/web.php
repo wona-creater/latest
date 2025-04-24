@@ -86,7 +86,7 @@ Route::middleware('auth', 'verified')->group(function () {
 
     Route::get('/admin/dashboard/investment', [adminController::class, 'investment'])->name('admin.investment');
     Route::post('/admin/dashboard/investmentplans', [adminController::class, 'storeInvestmentPlan'])->name('admin.investmentplans.store');
-    Route::get('/admin/dashboard/investments', [adminController::class, 'investments'])->name('admin.investments');
+    Route::get('/admin/dashboard/investmenthistory', [adminController::class, 'investments'])->name('admin.investmenthistory');
     Route::put('/admin/dashboard/investments/{investment}/status', [adminController::class, 'updateInvestmentStatus'])->name('admin.investments.updateStatus');
 
     Route::get('/admin/dashboard/admin/loan', [adminController::class, 'loan'])->name('admin.loan');
