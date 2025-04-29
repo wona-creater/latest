@@ -29,36 +29,44 @@
                         <table class="is-zebra w-full text-left">
                             <thead>
                                 <tr>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         #
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         User Name
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Plan ID
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Amount
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3
-
- font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Expected Profit
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Start Date
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         End Date
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Status
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Date/Time
                                     </th>
-                                    <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
+                                    <th
+                                        class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 dark:text-navy-100 lg:px-5">
                                         Action
                                     </th>
                                 </tr>
@@ -67,14 +75,20 @@
                                 @foreach ($investments as $investment)
                                     <tr>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $investment->id }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $investment->user->name }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $investment->user->name }}
+                                        </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $investment->plan_id }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ number_format($investment->amount, 2) }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ number_format($investment->expected_profit, 2) }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $investment->start_date->format('Y-m-d') }}</td>
-                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">{{ $investment->end_date->format('Y-m-d') }}</td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
-                                            <span class="badge {{ $investment->status === 'completed' ? 'bg-success' : 'bg-info' }} text-white">
+                                            {{ number_format($investment->amount, 2) }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            {{ number_format($investment->expected_profit, 2) }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            {{ $investment->start_date->format('Y-m-d') }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            {{ $investment->end_date->format('Y-m-d') }}</td>
+                                        <td class="whitespace-nowrap px-4 py-3 sm:px-5">
+                                            <span
+                                                class="badge {{ $investment->status === 'completed' ? 'bg-success' : 'bg-info' }} text-white">
                                                 {{ ucfirst($investment->status) }}
                                             </span>
                                         </td>
@@ -83,8 +97,12 @@
                                         </td>
                                         <td class="whitespace-nowrap px-4 py-3 sm:px-5">
                                             <select class="status-select" data-id="{{ $investment->id }}">
-                                                <option value="active" {{ $investment->status === 'active' ? 'selected' : '' }}>Active</option>
-                                                <option value="completed" {{ $investment->status === 'completed' ? 'selected' : '' }}>Completed</option>
+                                                <option value="active"
+                                                    {{ $investment->status === 'active' ? 'selected' : '' }}>Active
+                                                </option>
+                                                <option value="completed"
+                                                    {{ $investment->status === 'completed' ? 'selected' : '' }}>
+                                                    Completed</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -113,35 +131,38 @@
                     } text-white`;
 
                     fetch(`/admin/investments/${investmentId}/status`, {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                        },
-                        body: JSON.stringify({ status: newStatus }),
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.success) {
-                            alert(data.message);
-                        } else {
-                            throw new Error('Update failed');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        badge.textContent = previousStatus.charAt(0).toUpperCase() + previousStatus.slice(1);
-                        badge.className = `badge ${
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                            },
+                            body: JSON.stringify({
+                                status: newStatus
+                            }),
+                        })
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.success) {
+                                alert(data.message);
+                            } else {
+                                throw new Error('Update failed');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            badge.textContent = previousStatus.charAt(0).toUpperCase() + previousStatus
+                                .slice(1);
+                            badge.className = `badge ${
                             previousStatus === 'completed' ? 'bg-success' : 'bg-info'
                         } text-white`;
-                        this.value = previousStatus;
-                        alert('Failed to update status: ' + error.message);
-                    });
+                            this.value = previousStatus;
+                            alert('Failed to update status: ' + error.message);
+                        });
                 });
             });
         </script>
