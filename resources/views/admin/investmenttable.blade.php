@@ -130,7 +130,7 @@
                         newStatus === 'completed' ? 'bg-success' : 'bg-info'
                     } text-white`;
 
-                    fetch(`/admin/investments/${investmentId}/status`, {
+                    fetch(`/admin/dashboard/investments/${investmentId}/status`, {
                             method: 'PUT',
                             headers: {
                                 'Content-Type': 'application/json',
