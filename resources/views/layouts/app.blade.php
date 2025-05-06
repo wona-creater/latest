@@ -182,6 +182,52 @@
         </div>
         @stack('scripts')
     </div>
+
+    <!-- Telegram Customer Service Button Floating at Bottom-Left -->
+    <div class="telegram-customer-service-container">
+        <a href="https://t.me/sylvianoha" class="telegram-customer-service-button" target="_blank">
+            <svg class="telegram-customer-service-icon" viewBox="0 0 24 24">
+                <path
+                    d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-2.82 2.35z" />
+            </svg>
+            <small>Customer Service</small>
+        </a>
+        <style>
+            /* Scoped inline CSS to avoid conflicts */
+            .telegram-customer-service-container {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                z-index: 1000;
+                /* Ensure button is above other content */
+            }
+
+            .telegram-customer-service-container .telegram-customer-service-button {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                background-color: #0088cc;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-size: 16px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s;
+                font-family: Arial, sans-serif;
+            }
+
+            .telegram-customer-service-container .telegram-customer-service-button:hover {
+                background-color: #0077b3;
+            }
+
+            .telegram-customer-service-container .telegram-customer-service-icon {
+                width: 20px;
+                height: 20px;
+                fill: white;
+            }
+        </style>
+    </div>
 </body>
 
 
